@@ -27,13 +27,13 @@ const heroCardList = [
   <div class="hero">
     <div class="hero-images">
       <div class="image-title-wrapper">
-        <img src="@/shared/assets/images/title.png" alt="" />
+        <img src="@/shared/assets/images/title.png" alt="title" />
       </div>
       <div class="image-bg-wrapper">
         <!-- <img src="@/shared/assets/images/hero-bg.png" alt="" /> -->
       </div>
       <div class="image-alert-wrapper">
-        <img src="@/shared/assets/images/alert.png" alt="" />
+        <img src="@/shared/assets/images/alert.png" alt="alert" />
       </div>
       <div class="image-main-wrapper"></div>
     </div>

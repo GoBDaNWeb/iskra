@@ -33,7 +33,7 @@ import DirectionSwiper from "./DirectionSwiper.vue";
 
 .direction {
   background-color: var(--yellow-color);
-  background-image: url("@/shared/assets/images/direction/bg.png");
+  background-image: url("@/shared/assets/images/direction/bg.jpg");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
