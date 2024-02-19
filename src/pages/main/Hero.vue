@@ -227,7 +227,7 @@ const heroCardList = [
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        top: -62px;
+        top: -7%;
       }
       // img {
       //   width: 100%;
@@ -251,7 +251,7 @@ const heroCardList = [
       @media (max-width: $mob) {
         width: 350px;
         height: 215px;
-        top: 120px;
+        top: 10%;
       }
       img {
         width: 100%;

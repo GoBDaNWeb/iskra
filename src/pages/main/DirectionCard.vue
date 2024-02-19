@@ -89,7 +89,7 @@ defineProps(["textDirection", "title", "imgs", "text", "skills"]);
   align-items: flex-start;
   gap: 43px;
   padding: 104px 54px 103px 47px;
-  aspect-ratio: 1.5;
+  // aspect-ratio: 1.5;
   height: 100%;
   width: 100%;
   @media (max-width: $tab) {

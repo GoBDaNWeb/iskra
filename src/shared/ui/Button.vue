@@ -23,6 +23,7 @@ button.outline {
   transition: var(--trs-300);
   position: relative;
   overflow: hidden;
+  color: var(--black-color);
   p {
     position: relative;
     z-index: 2;
