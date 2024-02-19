@@ -25,6 +25,8 @@
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .partners {
   position: relative;
   padding-top: 140px;
@@ -39,6 +41,12 @@
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-partners-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
   }
   .partners-inner {
     padding-bottom: 90px;
@@ -48,12 +56,20 @@
         font-size: 60px;
         line-height: 66px;
         margin-bottom: 42px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+        }
       }
     }
     .bottom {
       display: flex;
       align-items: center;
       gap: 30px;
+      @media (max-width: $tab) {
+        flex-direction: column;
+        gap: 15px;
+      }
       .partner-item {
         background: var(--white-color);
         border-radius: 12px;
@@ -62,6 +78,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: $tab) {
+          padding: 30px 96px;
+        }
         .image-wrapper {
           width: 100%;
           height: 100%;

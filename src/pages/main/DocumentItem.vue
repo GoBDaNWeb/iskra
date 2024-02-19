@@ -22,6 +22,8 @@ defineProps(["title", "text"]);
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .document-item {
   padding: 47px 30px;
   background: var(--white-color);
@@ -31,6 +33,9 @@ defineProps(["title", "text"]);
   justify-content: space-between;
   gap: 20px;
   height: 340px;
+  @media (max-width: $tab) {
+    padding: 37px 30px;
+  }
   h6 {
     font-weight: 400;
     font-size: 32px;
@@ -54,6 +59,9 @@ defineProps(["title", "text"]);
   }
   button {
     width: 300px;
+    @media (max-width: $mob) {
+      width: 100%;
+    }
   }
 }
 </style>

@@ -46,12 +46,18 @@ defineProps(["swiperClass"]);
 </template>
 
 <style lang="scss">
+@import "@/shared/styles/vars";
+
 .main-swiper {
   .swiper-pagination-bullet {
-    width: 15px !important;
-    height: 15px !important;
-    background: var(--yellow-color) !important;
+    width: 15px;
+    height: 15px;
+    background: var(--yellow-color);
     opacity: 1;
+    @media (max-width: $tab) {
+      width: 10px !important;
+      height: 10px !important;
+    }
   }
   .swiper-pagination-bullet-active {
     background: var(--purple-color) !important;
@@ -59,9 +65,15 @@ defineProps(["swiperClass"]);
 }
 </style>
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .main-swiper {
-  height: calc(20vw * 1.1);
+  max-height: 434px;
+  height: calc(20vw * 1.52);
   position: relative;
+  @media (max-width: $tab) {
+    height: calc(20vw * 2.7);
+  }
   .swiper {
     height: 100%;
   }
@@ -80,6 +92,9 @@ defineProps(["swiperClass"]);
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    @media (max-width: $tab) {
+      display: none;
+    }
     button {
       pointer-events: all;
 

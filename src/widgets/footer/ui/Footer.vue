@@ -22,20 +22,31 @@
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 footer {
   background: var(--purple-color);
   position: relative;
   z-index: 1;
   padding-top: 90px;
   padding-bottom: 22px;
+  @media (max-width: $tab) {
+    padding-top: 41px;
+  }
   .footer-inner {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    @media (max-width: $tab) {
+      gap: 78px;
+    }
     .top {
       display: flex;
       align-items: flex-start;
       gap: 60px;
+      @media (max-width: $tab) {
+        flex-direction: column;
+      }
       .logo {
         width: 128px;
         height: 27px;

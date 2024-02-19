@@ -3,7 +3,7 @@ import { Map } from "@/entities";
 </script>
 
 <template>
-  <div class="contacts">
+  <div id="contacts" class="contacts">
     <div class="container">
       <div class="contacts-inner">
         <div class="left">
@@ -36,10 +36,19 @@ import { Map } from "@/entities";
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .contacts {
   position: relative;
   z-index: 2;
   padding-top: 140px;
+  @media (max-width: $tab) {
+    padding-top: 85px;
+    &:after {
+      display: none;
+    }
+  }
+
   &:after {
     content: "";
     position: absolute;
@@ -54,6 +63,9 @@ import { Map } from "@/entities";
     display: grid;
     grid-template-columns: calc(30% - 30px) calc(70% - 30px);
     gap: 60px;
+    @media (max-width: $tab) {
+      grid-template-columns: repeat(1, 1fr);
+    }
     .left {
       display: flex;
       flex-direction: column;
@@ -63,9 +75,17 @@ import { Map } from "@/entities";
         font-size: 60px;
         line-height: 66px;
         margin-bottom: 42px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+          margin-bottom: 66px;
+        }
       }
       .address {
         margin-bottom: 40px;
+        @media (max-width: $tab) {
+          margin-bottom: 25px;
+        }
         span {
           font-weight: 700;
           font-size: 20px;
@@ -78,6 +98,10 @@ import { Map } from "@/entities";
           font-size: 20px;
           line-height: 28px;
           color: var(--black-color);
+          @media (max-width: $tab) {
+            font-size: 18px;
+            line-height: 25px;
+          }
         }
       }
       .email {
@@ -86,6 +110,10 @@ import { Map } from "@/entities";
         line-height: 23px;
         color: var(--rose-color);
         margin-bottom: 25px;
+        @media (max-width: $tab) {
+          font-size: 18px;
+          line-height: 25px;
+        }
       }
       .tel {
         margin-bottom: 25px;
@@ -93,15 +121,27 @@ import { Map } from "@/entities";
           font-weight: 700;
           font-size: 32px;
           line-height: 35px;
+          @media (max-width: $tab) {
+            font-size: 28px;
+            line-height: 39px;
+          }
         }
         p {
           font-weight: 400;
           font-size: 20px;
           line-height: 28px;
+          @media (max-width: $tab) {
+            font-size: 18px;
+            line-height: 25px;
+          }
         }
       }
     }
     .right {
+      @media (max-width: $tab) {
+        height: 50vh;
+        margin: 0 -15px;
+      }
     }
   }
 }

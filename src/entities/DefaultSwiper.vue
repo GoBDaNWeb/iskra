@@ -21,7 +21,7 @@ const props = defineProps(["title", "badges", "text"]);
 <template>
   <div class="default-swiper">
     <div class="content">
-      <h5>{{ title }}</h5>
+      <h5 v-if="title">{{ title }}</h5>
       <p v-if="text">{{ text }}</p>
       <div class="badges" v-if="badges">
         <Badge variable="primary" v-for="badge in badges" :key="badge">
@@ -86,6 +86,8 @@ const props = defineProps(["title", "badges", "text"]);
 }
 </style>
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .default-swiper {
   display: flex;
   flex-direction: column;
@@ -97,7 +99,9 @@ const props = defineProps(["title", "badges", "text"]);
   .swiper-wrapper {
     max-height: 370px;
     height: 100%;
-
+    @media (max-width: $tab) {
+      max-height: 100%;
+    }
     .navigation {
       pointer-events: none;
       z-index: 2;
@@ -113,6 +117,9 @@ const props = defineProps(["title", "badges", "text"]);
       justify-content: space-between;
       align-items: center;
       margin: auto;
+      @media (max-width: $tab) {
+        display: none;
+      }
       button {
         pointer-events: all;
 
@@ -133,6 +140,10 @@ const props = defineProps(["title", "badges", "text"]);
     font-weight: 700;
     font-size: 32px;
     line-height: 35px;
+    @media (max-width: $tab) {
+      font-size: 28px;
+      line-height: 33px;
+    }
   }
   p {
     margin-top: 18px;
@@ -141,6 +152,10 @@ const props = defineProps(["title", "badges", "text"]);
     font-size: 20px;
     line-height: 28px;
     max-width: 605px;
+    @media (max-width: $tab) {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
   .badges {
     display: flex;

@@ -30,7 +30,7 @@ const heroCardList = [
         <img src="@/shared/assets/images/title.png" alt="" />
       </div>
       <div class="image-bg-wrapper">
-        <img src="@/shared/assets/images/hero-bg.png" alt="" />
+        <!-- <img src="@/shared/assets/images/hero-bg.png" alt="" /> -->
       </div>
       <div class="image-alert-wrapper">
         <img src="@/shared/assets/images/alert.png" alt="" />
@@ -66,10 +66,13 @@ const heroCardList = [
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
 .hero {
   padding-top: 106px;
   min-height: 100vh;
-  margin-bottom: 156px;
+  @media (max-width: $desktop-sm) {
+    padding-top: 74px;
+  }
   .hero-inner {
     position: relative;
     z-index: 3;
@@ -80,11 +83,27 @@ const heroCardList = [
       content: "";
       position: absolute;
       background: url("@/shared/assets/images/shapes/shape-hero1.svg");
-      background-size: contain;
+      background-size: 100%;
       background-repeat: no-repeat;
-      top: -40px;
+      top: -44px;
       width: 100%;
       height: 60px;
+      @media (max-width: 1440px) {
+        top: -30px;
+      }
+      @media (max-width: 992px) {
+        top: -20px;
+      }
+      @media (max-width: 660px) {
+        top: -10px;
+      }
+      @media (max-width: $pre-mob) {
+        background: url("@/shared/assets/images/shapes/shape-hero1-mob.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: -50px;
+        background-position: right;
+      }
     }
     &:after {
       content: "";
@@ -95,6 +114,14 @@ const heroCardList = [
       bottom: -55px;
       width: 100%;
       height: 60px;
+      @media (max-width: $tab) {
+        background-size: 100%;
+      }
+      @media (max-width: $pre-mob) {
+        background: url("@/shared/assets/images/shapes/shape-hero2-mob.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
     .hero-inner-content {
       .top {
@@ -105,11 +132,18 @@ const heroCardList = [
           font-size: 60px;
           line-height: 66px;
           color: var(--white-color);
+          @media (max-width: $tab) {
+            font-size: 40px;
+            line-height: 44px;
+          }
         }
         .badge-wrapper {
           display: flex;
           align-items: center;
           gap: 16px;
+          @media (max-width: $tab) {
+            display: none;
+          }
           p {
             font-size: 16px;
             line-height: 19px;
@@ -125,9 +159,17 @@ const heroCardList = [
         }
       }
       .bottom {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 40px;
         margin-top: 40px;
+        @media (max-width: $desktop-sm) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $tab) {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 25px;
+        }
       }
     }
   }
@@ -141,6 +183,12 @@ const heroCardList = [
       background-repeat: no-repeat;
       padding-top: 106px;
       min-height: 100vh;
+      @media (max-width: $mob) {
+        background: url("@/shared/assets/images/hero-bg-main-mob.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
     .image-alert-wrapper {
       position: absolute;
@@ -148,6 +196,13 @@ const heroCardList = [
       height: 289px;
       left: 8%;
       top: 60px;
+      z-index: 3;
+      @media (max-width: $desktop-sm) {
+        left: 5%;
+      }
+      @media (max-width: $tab) {
+        display: none;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -155,6 +210,10 @@ const heroCardList = [
       }
     }
     .image-bg-wrapper {
+      background: url("@/shared/assets/images/hero-bg.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       position: absolute;
       z-index: 2;
       top: 0;
@@ -163,11 +222,18 @@ const heroCardList = [
       right: 0;
       width: 100%;
       height: 100%;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      @media (max-width: $mob) {
+        background: url("@/shared/assets/images/hero-bg-mob.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: -62px;
       }
+      // img {
+      //   width: 100%;
+      //   height: 100%;
+      //   object-fit: cover;
+      // }
     }
     .image-title-wrapper {
       width: 540px;
@@ -177,6 +243,16 @@ const heroCardList = [
       left: 0;
       right: 0;
       top: 100px;
+      @media (max-width: $desktop-sm) {
+        width: 440px;
+        height: 282px;
+        top: 60px;
+      }
+      @media (max-width: $mob) {
+        width: 350px;
+        height: 215px;
+        top: 120px;
+      }
       img {
         width: 100%;
         height: 100%;

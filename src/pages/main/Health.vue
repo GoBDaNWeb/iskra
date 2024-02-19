@@ -24,6 +24,9 @@ import { Button } from "@/shared/ui";
           <div class="image-wrapper">
             <img src="@/shared/assets/images/health/1.jpg" alt="photo" />
           </div>
+          <div class="button-wrapper">
+            <Button variable="primary">Посмотреть</Button>
+          </div>
         </div>
       </div>
     </div>
@@ -31,12 +34,18 @@ import { Button } from "@/shared/ui";
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .health {
   position: relative;
   background: var(--light-rose-color);
   padding-top: 140px;
   padding-bottom: 108px;
   z-index: 9;
+  @media (max-width: $tab) {
+    padding-top: 80px;
+    padding-bottom: 62px;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -46,18 +55,39 @@ import { Button } from "@/shared/ui";
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-health-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   .health-inner {
     display: flex;
     gap: 94px;
     align-items: flex-end;
+    @media (max-width: $desktop-sm) {
+      gap: 55px;
+      align-items: flex-start;
+    }
+    @media (max-width: $tab) {
+      flex-direction: column;
+      gap: 35px;
+    }
     .left {
       width: 36%;
+      @media (max-width: $tab) {
+        width: 100%;
+      }
       h3 {
         font-weight: 700;
         font-size: 60px;
         line-height: 66px;
         margin-bottom: 83px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+          margin-bottom: 40px;
+        }
       }
       & > span {
         font-weight: 700;
@@ -65,12 +95,20 @@ import { Button } from "@/shared/ui";
         line-height: 35px;
         display: block;
         margin-bottom: 50px;
+        @media (max-width: $tab) {
+          font-size: 28px;
+          line-height: 33px;
+        }
       }
       & > p {
         font-weight: 400;
         font-size: 32px;
         line-height: 38px;
         margin-bottom: 20px;
+        @media (max-width: $tab) {
+          font-size: 28px;
+          line-height: 33px;
+        }
       }
       .file {
         margin-bottom: 40px;
@@ -84,23 +122,50 @@ import { Button } from "@/shared/ui";
           font-weight: 400;
           font-size: 20px;
           line-height: 28px;
+          @media (max-width: $tab) {
+            font-size: 18px;
+            line-height: 25px;
+            max-width: 263px;
+          }
         }
       }
       button {
         width: 300px;
+        @media (max-width: $tab) {
+          display: none;
+        }
       }
     }
     .right {
       width: 58%;
+      @media (max-width: $tab) {
+        width: 100%;
+      }
       .image-wrapper {
         width: 100%;
-        height: calc(20vw * 1.1);
+        max-height: 434px;
+        height: calc(20vw * 1.52);
         border-radius: 15px;
         overflow: hidden;
+        @media (max-width: $tab) {
+          height: calc(20vw * 2.7);
+        }
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+      }
+      .button-wrapper {
+        display: none;
+        @media (max-width: $tab) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 40px;
+          button {
+            width: 360px;
+          }
         }
       }
     }

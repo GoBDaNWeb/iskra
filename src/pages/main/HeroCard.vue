@@ -19,6 +19,8 @@ defineProps(["title", "date", "price"]);
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .hero-card {
   position: relative;
   z-index: 2;
@@ -52,6 +54,10 @@ defineProps(["title", "date", "price"]);
       font-weight: 400;
       font-size: 20px;
       line-height: 28px;
+      @media (max-width: $tab) {
+        font-size: 18px;
+        line-height: 25px;
+      }
     }
     span {
       font-weight: 700;
@@ -62,10 +68,19 @@ defineProps(["title", "date", "price"]);
       display: flex;
       gap: 10px;
       align-items: center;
+      @media (max-width: $tab) {
+        flex-direction: column;
+      }
       button {
         font-size: 14px;
         line-height: 16px;
         height: 45px;
+        @media (max-width: $tab) {
+          width: 286px;
+        }
+        @media (max-width: $pre-mob) {
+          width: 100%;
+        }
       }
     }
   }

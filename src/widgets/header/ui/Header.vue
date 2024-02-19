@@ -1,5 +1,24 @@
 <script setup>
+import { ref, onMounted } from "vue";
+import { useMenuStore } from "@/entities";
 import { Button } from "@/shared/ui";
+
+const menu = useMenuStore();
+
+const list = ref(null);
+onMounted(() => {
+  const items = list.value.querySelectorAll("li");
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      const block = document.querySelector(`#${item.dataset.scroll}`);
+      window.scrollTo({
+        top: block.offsetTop - 150,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+});
 </script>
 
 <template>
@@ -9,14 +28,14 @@ import { Button } from "@/shared/ui";
         <div class="logo">
           <img src="@/shared/assets/images/logo.png" alt="logo" />
         </div>
-        <nav>
+        <nav ref="list">
           <ul>
-            <li><a href="">О лагере</a></li>
-            <li><a href="">Проживание</a></li>
-            <li><a href="">Питание</a></li>
-            <li><a href="">Досуг</a></li>
-            <li><a href="">Документы</a></li>
-            <li><a href="">Контакты</a></li>
+            <li data-scroll="about">О лагере</li>
+            <li data-scroll="house">Проживание</li>
+            <li data-scroll="nutrition">Питание</li>
+            <li data-scroll="rest">Досуг</li>
+            <li data-scroll="documents">Документы</li>
+            <li data-scroll="contacts">Контакты</li>
           </ul>
         </nav>
         <div class="info">
@@ -28,12 +47,18 @@ import { Button } from "@/shared/ui";
             <Button variable="outline">Личный кабинет</Button>
           </div>
         </div>
+        <div
+          class="burger"
+          :class="menu.isActive ? 'active' : ''"
+          @click="menu.handleOpenMenu"
+        ></div>
       </div>
     </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
 header {
   background: var(--white-color);
   position: fixed;
@@ -47,6 +72,9 @@ header {
     padding-top: 60px;
     padding-bottom: 22px;
     position: relative;
+    @media (max-width: $desktop-sm) {
+      padding-top: 22px;
+    }
     .logo {
       width: 156px;
       height: 32px;
@@ -57,15 +85,27 @@ header {
       }
     }
     nav {
+      @media (max-width: $desktop-sm) {
+        display: none;
+      }
       ul {
         display: flex;
         gap: 30px;
+        li {
+          cursor: pointer;
+          font-size: 18px;
+          line-height: 21px;
+          font-weight: 400;
+        }
       }
     }
     .info {
       display: flex;
       align-items: center;
       gap: 22px;
+      @media (max-width: $desktop-sm) {
+        display: none;
+      }
       .left {
         a {
           font-weight: 500;
@@ -92,6 +132,47 @@ header {
           line-height: 22px;
           width: 205px;
         }
+      }
+    }
+    .burger.active {
+    }
+    .burger.active {
+      &:after {
+        transform: rotate(45deg);
+        top: 5px;
+      }
+      &:before {
+        transform: rotate(-45deg);
+        bottom: 5px;
+      }
+    }
+    .burger {
+      position: relative;
+      height: 12px;
+      width: 32px;
+      cursor: pointer;
+      display: none;
+
+      @media (max-width: $desktop-sm) {
+        display: block;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: var(--black-color);
+        top: 0;
+        transition: var(--trs-300);
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: var(--black-color);
+        bottom: 0;
+        transition: var(--trs-300);
       }
     }
   }

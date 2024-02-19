@@ -9,6 +9,8 @@ defineProps(["variable"]);
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .badge {
   border-radius: 10px;
   padding: 12px 14px;
@@ -29,5 +31,9 @@ defineProps(["variable"]);
   font-weight: 500;
   line-height: 54px;
   border-radius: 51px;
+  @media (max-width: $tab) {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 </style>

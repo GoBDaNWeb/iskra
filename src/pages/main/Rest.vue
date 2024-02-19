@@ -8,7 +8,7 @@ import img from "@/shared/assets/images/rest/1.jpg";
 </script>
 
 <template>
-  <div class="rest">
+  <div id="rest" class="rest">
     <div class="rest-wrapper">
       <div class="container">
         <div class="rest-inner">
@@ -41,6 +41,8 @@ import img from "@/shared/assets/images/rest/1.jpg";
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .rest {
   background: var(--purple-color);
   position: relative;
@@ -54,6 +56,12 @@ import img from "@/shared/assets/images/rest/1.jpg";
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-rest-mob.svg");
+      background-size: cover;
+
+      background-repeat: no-repeat;
+    }
   }
   .rest-wrapper {
     overflow: hidden;
@@ -61,18 +69,29 @@ import img from "@/shared/assets/images/rest/1.jpg";
   .rest-inner {
     padding-top: 140px;
     padding-bottom: 125px;
+    @media (max-width: $tab) {
+      padding-bottom: 85px;
+    }
     .top {
       display: flex;
       gap: 94px;
       align-items: center;
       .left {
         width: 36%;
+        @media (max-width: $tab) {
+          width: 100%;
+        }
         h3 {
           color: var(--white-color);
           font-weight: 700;
           font-size: 60px;
           line-height: 66px;
           margin-bottom: 42px;
+          @media (max-width: $tab) {
+            font-size: 40px;
+            line-height: 44px;
+            margin-bottom: 40px;
+          }
         }
         & > p {
           font-weight: 400;
@@ -80,6 +99,10 @@ import img from "@/shared/assets/images/rest/1.jpg";
           line-height: 36px;
           color: var(--white-color);
           margin-bottom: 50px;
+          @media (max-width: $tab) {
+            font-size: 18px;
+            line-height: 25px;
+          }
         }
         span {
           font-weight: 400;
@@ -101,15 +124,26 @@ import img from "@/shared/assets/images/rest/1.jpg";
             font-weight: 400;
             font-size: 20px;
             line-height: 28px;
+            @media (max-width: $tab) {
+              font-size: 18px;
+              line-height: 25px;
+              max-width: 263px;
+            }
           }
         }
         button {
           margin-top: 40px;
           width: 300px;
+          @media (max-width: $pre-mob) {
+            width: 100%;
+          }
         }
       }
       .right {
         width: 58%;
+        @media (max-width: $tab) {
+          display: none;
+        }
         .image-wrapper {
           width: 100%;
           height: calc(20vw * 1.1);
@@ -125,6 +159,9 @@ import img from "@/shared/assets/images/rest/1.jpg";
     }
     .bottom {
       margin-top: 94px;
+      @media (max-width: $tab) {
+        margin-top: 40px;
+      }
     }
   }
 }

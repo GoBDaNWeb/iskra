@@ -16,6 +16,8 @@ import { Accordion } from "@/shared/ui";
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .faq {
   background: var(--yellow-color);
   position: relative;
@@ -30,6 +32,12 @@ import { Accordion } from "@/shared/ui";
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-faq-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
   }
   .faq-inner {
     padding-bottom: 82px;
@@ -37,12 +45,19 @@ import { Accordion } from "@/shared/ui";
       font-weight: 700;
       font-size: 60px;
       line-height: 66px;
+      @media (max-width: $tab) {
+        font-size: 40px;
+        line-height: 44px;
+      }
     }
     .faq-list {
       margin-top: 42px;
       display: flex;
       flex-direction: column;
       gap: 24px;
+      @media (max-width: $tab) {
+        gap: 15px;
+      }
     }
   }
 }

@@ -22,7 +22,7 @@ const museumsList2 = [
     <div class="container">
       <div class="museums-inner">
         <div class="top">
-          <h3>Дополнительное образование</h3>
+          <h3>Музеи</h3>
         </div>
         <div class="bottom">
           <div class="museums-item">
@@ -52,6 +52,8 @@ const museumsList2 = [
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .museums {
   position: relative;
   &:after {
@@ -67,20 +69,36 @@ const museumsList2 = [
   .museums-inner {
     padding-top: 140px;
     padding-bottom: 100px;
+    @media (max-width: $tab) {
+      padding-top: 0;
+    }
     .top {
       h3 {
         font-weight: 700;
         font-size: 60px;
         line-height: 66px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+          margin-bottom: 40px;
+        }
       }
     }
     .bottom {
-      display: grid;
-      grid-template-columns: repeat(2, calc(50% - 15px));
+      display: flex;
+      align-items: center;
       gap: 30px;
       margin-top: 48px;
+      @media (max-width: $tab) {
+        flex-direction: column;
+        gap: 76px;
+      }
+
       .museums-item {
-        width: 100%;
+        width: 50%;
+        @media (max-width: $tab) {
+          width: 100%;
+        }
       }
     }
   }

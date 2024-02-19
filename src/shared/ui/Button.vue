@@ -63,6 +63,7 @@ button.primary {
     position: relative;
     z-index: 2;
   }
+
   &:before {
     content: "";
     position: absolute;

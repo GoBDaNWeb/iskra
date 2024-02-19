@@ -1,6 +1,9 @@
 <script setup>
-import { Photo } from "@/entities";
 import { Fancybox } from "@/widgets/fancybox";
+import { SwiperSlide } from "swiper/vue";
+import { Badge } from "@/shared/ui";
+import { DefaultSwiper, Photo } from "@/entities";
+
 import img1 from "@/shared/assets/images/gallery/1.jpg";
 import img2 from "@/shared/assets/images/gallery/2.jpg";
 import img3 from "@/shared/assets/images/gallery/3.jpg";
@@ -53,6 +56,13 @@ const galleryList = [
         <div class="top">
           <h3>Фотогалерея</h3>
         </div>
+        <div class="swiper-container">
+          <DefaultSwiper>
+            <SwiperSlide v-for="img in galleryList" :key="img.id">
+              <Photo :img="img.img" />
+            </SwiperSlide>
+          </DefaultSwiper>
+        </div>
         <Fancybox>
           <div class="bottom">
             <Photo
@@ -69,6 +79,8 @@ const galleryList = [
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .gallery {
   position: relative;
   z-index: 6;
@@ -81,22 +93,43 @@ const galleryList = [
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-gallery-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   .gallery-inner {
     padding-bottom: 100px;
 
     .top {
       margin-bottom: 68px;
+      @media (max-width: $tab) {
+        margin-bottom: 40px;
+      }
       h3 {
         font-weight: 700;
         font-size: 60px;
         line-height: 66px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+        }
+      }
+    }
+    .swiper-container {
+      display: none;
+      @media (max-width: 1024px) {
+        display: block;
       }
     }
     .bottom {
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
+      @media (max-width: $tab) {
+        display: none;
+      }
       .photo {
         &:nth-child(1) {
           width: calc(50% - 20px);

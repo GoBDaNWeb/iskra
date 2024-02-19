@@ -13,7 +13,7 @@ const houseList = [
 </script>
 
 <template>
-  <div class="nutrition">
+  <div id="nutrition" class="nutrition">
     <div class="container">
       <div class="nutrition-inner">
         <div class="left">
@@ -33,6 +33,9 @@ const houseList = [
               </div>
             </SwiperSlide>
           </MainSwiper>
+          <div class="button-wrapper">
+            <Button variable="primary">Посмотреть</Button>
+          </div>
         </div>
       </div>
     </div>
@@ -53,12 +56,18 @@ const houseList = [
 }
 </style>
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .nutrition {
   background: var(--purple-color);
   position: relative;
   z-index: 10;
   padding-top: 165px;
   padding-bottom: 100px;
+  @media (max-width: $tab) {
+    padding-top: 88px;
+    padding-bottom: 60px;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -68,18 +77,38 @@ const houseList = [
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-nutrition-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
   }
   .nutrition-inner {
     display: flex;
     gap: 94px;
+    @media (max-width: $desktop-sm) {
+      gap: 30px;
+    }
+    @media (max-width: $tab) {
+      flex-direction: column;
+    }
     .left {
       width: 42%;
+      @media (max-width: $tab) {
+        width: 100%;
+      }
       h3 {
         font-weight: 700;
         color: var(--white-color);
         font-size: 60px;
         line-height: 66px;
         margin-bottom: 46px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+          margin-bottom: 40px;
+        }
       }
       span {
         font-weight: 400;
@@ -88,6 +117,10 @@ const houseList = [
         color: var(--white-color);
         margin-bottom: 20px;
         display: block;
+        @media (max-width: $tab) {
+          font-size: 28px;
+          line-height: 33px;
+        }
       }
       .menu {
         display: flex;
@@ -102,14 +135,25 @@ const houseList = [
           font-size: 20px;
           line-height: 28px;
           color: var(--white-color);
+          @media (max-width: $tab) {
+            font-size: 18px;
+            line-height: 25px;
+            max-width: 263px;
+          }
         }
       }
       button {
         width: 255px;
+        @media (max-width: $tab) {
+          display: none;
+        }
       }
     }
     .right {
       width: 58%;
+      @media (max-width: $tab) {
+        width: 100%;
+      }
       .image-wrapper {
         width: 100%;
         height: 100%;
@@ -119,6 +163,18 @@ const houseList = [
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+      }
+      .button-wrapper {
+        display: none;
+        @media (max-width: $tab) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 65px;
+          button {
+            width: 360px;
+          }
         }
       }
     }

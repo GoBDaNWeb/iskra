@@ -5,6 +5,10 @@
   padding-left: 70px;
   padding-right: 70px;
   width: 100%;
+  @media (max-width: $tab) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .container-2 {
   max-width: 1440px;
@@ -16,7 +20,7 @@
 
 body {
   background: var(--bg-color);
-  font-family: "Golos Text", sans-serif;
+  font-family: "HelveticaNeueCyr", sans-serif;
 }
 .ymaps-2-1-79-gotoymaps {
   display: none !important;

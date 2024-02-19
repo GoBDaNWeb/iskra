@@ -33,6 +33,11 @@ defineProps(["pagColor"]);
         prevEl: prev,
         nextEl: next,
       }"
+      :breakpoints="{
+        0: { slidesPerView: 1.1, spaceBetween: 15 },
+        767: { slidesPerView: 2.1 },
+        1024: { slidesPerView: 3.1, spaceBetween: 30 },
+      }"
       :modules="modules"
       class="swiper-triple"
     >
@@ -77,6 +82,8 @@ defineProps(["pagColor"]);
 }
 </style>
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .triple-swiper {
   position: relative;
   .navigation {
@@ -92,6 +99,9 @@ defineProps(["pagColor"]);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $tab) {
+      display: none;
+    }
     button {
       pointer-events: all;
       position: absolute;

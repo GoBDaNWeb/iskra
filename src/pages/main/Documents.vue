@@ -33,7 +33,7 @@ const documentsList = [
 </script>
 
 <template>
-  <div class="documents">
+  <div id="documents" class="documents">
     <div class="documents-wrapper">
       <div class="container">
         <div class="documents-inner">
@@ -54,6 +54,8 @@ const documentsList = [
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .documents {
   padding-top: 140px;
   position: relative;
@@ -68,6 +70,11 @@ const documentsList = [
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-documents-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   .documents-wrapper {
     overflow: hidden;
@@ -79,6 +86,10 @@ const documentsList = [
         font-weight: 700;
         font-size: 60px;
         line-height: 66px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+        }
       }
     }
     .bottom {

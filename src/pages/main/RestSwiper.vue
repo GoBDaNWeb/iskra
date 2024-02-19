@@ -70,6 +70,11 @@ const restList = [
         nextEl: next,
       }"
       :modules="modules"
+      :breakpoints="{
+        0: { slidesPerView: 1 },
+        767: { slidesPerView: 2.1 },
+        1024: { slidesPerView: 3.1 },
+      }"
       class="swiper-rest"
     >
       <SwiperSlide v-for="item in restList" :key="item.id">
@@ -103,6 +108,8 @@ const restList = [
 }
 </style>
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .rest-swiper {
   position: relative;
   .navigation {
@@ -116,6 +123,9 @@ const restList = [
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $tab) {
+      display: none;
+    }
     button {
       pointer-events: all;
       position: absolute;
@@ -144,6 +154,9 @@ const restList = [
       font-weight: 400;
       font-size: 20px;
       line-height: 28px;
+      @media (max-width: $tab) {
+        display: none;
+      }
     }
   }
 }

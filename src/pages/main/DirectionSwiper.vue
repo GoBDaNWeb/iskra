@@ -114,6 +114,10 @@ const directionList = [
         nextEl: next,
       }"
       :modules="modules"
+      :breakpoints="{
+        0: { spaceBetween: 10, slidesPerView: 1.05 },
+        1024: { spaceBetween: 30, slidesPerView: 1.15 },
+      }"
       class="swiper-direction"
     >
       <SwiperSlide v-for="item in directionList" :key="item.id">
@@ -131,7 +135,12 @@ const directionList = [
 </template>
 
 <style lang="scss">
+@import "@/shared/styles/vars";
+
 .direction-swiper {
+  .swiper-wrapper {
+    align-items: stretch;
+  }
   .pagination {
     display: flex;
     justify-content: center;
@@ -149,6 +158,8 @@ const directionList = [
 }
 </style>
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .direction-swiper {
   position: relative;
   .swiper-direction {
@@ -156,6 +167,7 @@ const directionList = [
     .swiper-slide {
       opacity: 0.4;
       transition: var(--trs-300);
+      height: auto;
     }
     .swiper-slide-active {
       opacity: 1;
@@ -174,6 +186,9 @@ const directionList = [
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    @media (max-width: $tab) {
+      display: none;
+    }
     button {
       pointer-events: all;
       position: absolute;

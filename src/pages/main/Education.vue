@@ -57,8 +57,13 @@ const educationList2 = [
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .education {
   position: relative;
+  @media (max-width: $tab) {
+    padding-bottom: 100px;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -76,6 +81,10 @@ const educationList2 = [
         font-weight: 700;
         font-size: 60px;
         line-height: 66px;
+        @media (max-width: $tab) {
+          font-size: 40px;
+          line-height: 44px;
+        }
       }
     }
     .center {
@@ -83,8 +92,15 @@ const educationList2 = [
       align-items: center;
       gap: 30px;
       margin-top: 48px;
+      @media (max-width: $tab) {
+        flex-direction: column;
+        gap: 76px;
+      }
       .education-item {
         width: 50%;
+        @media (max-width: $tab) {
+          width: 100%;
+        }
       }
     }
     .bottom {
@@ -97,6 +113,12 @@ const educationList2 = [
         background-repeat: no-repeat;
         max-width: 815px;
         margin: auto;
+        @media (max-width: $tab) {
+          background: var(--white-color);
+          box-shadow: var(--shadow);
+          padding: 18px 24px;
+          border-radius: 20px;
+        }
         h4 {
           font-weight: 700;
           font-size: 32px;
@@ -105,6 +127,10 @@ const educationList2 = [
           color: transparent;
           -webkit-background-clip: text;
           background-clip: text;
+          @media (max-width: $tab) {
+            font-size: 28px;
+            line-height: 33px;
+          }
         }
       }
     }

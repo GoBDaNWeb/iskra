@@ -9,7 +9,9 @@ import DirectionSwiper from "./DirectionSwiper.vue";
         <div class="direction-inner">
           <div class="top">
             <div class="direction-about">
-              <h3>Развивающие направления</h3>
+              <div class="title-wrapper">
+                <h3>Развивающие направления</h3>
+              </div>
               <p>
                 При попадании в лагерь каждый ребенок может выбрать одно из пяти
                 направлений познавательного досуга, которое закрепляется за
@@ -27,6 +29,8 @@ import DirectionSwiper from "./DirectionSwiper.vue";
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .direction {
   background-color: var(--yellow-color);
   background-image: url("@/shared/assets/images/direction/bg.png");
@@ -35,6 +39,12 @@ import DirectionSwiper from "./DirectionSwiper.vue";
   background-repeat: no-repeat;
   position: relative;
   z-index: 8;
+  @media (max-width: $tab) {
+    background-image: url("@/shared/assets/images/direction/bg-mob.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -44,6 +54,11 @@ import DirectionSwiper from "./DirectionSwiper.vue";
     bottom: -55px;
     width: 100%;
     height: 60px;
+    @media (max-width: $tab-sm) {
+      background: url("@/shared/assets/images/shapes/shape-direction-mob.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   .direction-wrapper {
     overflow: hidden;
@@ -51,6 +66,9 @@ import DirectionSwiper from "./DirectionSwiper.vue";
   .direction-inner {
     padding-top: 130px;
     padding-bottom: 100px;
+    @media (max-width: $tab) {
+      padding-top: 303px;
+    }
 
     .top {
       .direction-about {
@@ -64,6 +82,17 @@ import DirectionSwiper from "./DirectionSwiper.vue";
         background-position: center;
         padding: 36px 40px 50px 57px;
         background-repeat: no-repeat;
+        @media (max-width: $tab) {
+          background: none;
+          padding: 0;
+        }
+        .title-wrapper {
+          @media (max-width: $tab) {
+            background: var(--white-color);
+            padding: 19px 20px 30px 24px;
+            border-radius: 20px;
+          }
+        }
         h3 {
           font-weight: 700;
           font-size: 60px;
@@ -72,16 +101,29 @@ import DirectionSwiper from "./DirectionSwiper.vue";
           color: transparent;
           -webkit-background-clip: text;
           background-clip: text;
+          position: relative;
+          @media (max-width: $tab) {
+            font-size: 40px;
+            line-height: 44px;
+          }
         }
         p {
           font-weight: 400;
           font-size: 24px;
           line-height: 36px;
+          @media (max-width: $tab) {
+            font-size: 18px;
+            line-height: 25px;
+            padding-left: 30px;
+          }
         }
       }
     }
     .bottom {
       margin-top: 233px;
+      @media (max-width: $tab) {
+        margin-top: 40px;
+      }
     }
   }
 }

@@ -83,6 +83,8 @@ function handleAccordion(selectedIndex) {
 </template>
 
 <style lang="scss" scoped>
+@import "@/shared/styles/vars";
+
 .accordion.active {
   button {
     border-radius: 12px 12px 0 0;
@@ -99,6 +101,10 @@ function handleAccordion(selectedIndex) {
     p {
       padding-top: 40px;
       padding-bottom: 70px;
+      @media (max-width: $tab) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
     }
   }
 }
@@ -119,6 +125,10 @@ function handleAccordion(selectedIndex) {
       font-weight: 400;
       font-size: 24px;
       line-height: 36px;
+      @media (max-width: $tab) {
+        font-size: 20px;
+        line-height: 28px;
+      }
     }
     .icon {
       width: 33px;
@@ -159,6 +169,14 @@ function handleAccordion(selectedIndex) {
     p {
       padding: 0 40px;
       transition: var(--trs-300);
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      @media (max-width: $tab) {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 0 20px;
+      }
     }
   }
 }
