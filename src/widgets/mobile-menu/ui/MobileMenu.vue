@@ -64,14 +64,16 @@ onMounted(() => {
   transition: var(--trs-300);
 
   .mobile-menu-content {
-    padding: 110px 15px 50px;
+    padding: 110px 15px 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 100px;
     height: 100%;
     opacity: 0;
     transition: var(--trs-300);
     transition-delay: 400ms;
+    overflow: auto;
     nav {
       ul {
         display: flex;
