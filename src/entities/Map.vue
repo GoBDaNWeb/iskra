@@ -1,5 +1,5 @@
 <script setup>
-let center = [55.84742656888428, 37.478171499999995];
+let center = [55.849139397181, 37.26464403175793];
 
 function init() {
   let map = new ymaps.Map("map", {
@@ -7,16 +7,7 @@ function init() {
     zoom: 17,
   });
 
-  let placemark = new ymaps.Placemark(
-    center,
-    {},
-    {
-      iconLayout: "default#image",
-      iconImageHref: "@/shared/assets/images/pin.png",
-      iconImageSize: [40, 40],
-      iconImageOffset: [-19, -44],
-    }
-  );
+  let placemark = new ymaps.Placemark(center, {}, {});
 
   map.controls.remove("geolocationControl"); // удаляем геолокацию
   map.controls.remove("searchControl"); // удаляем поиск
