@@ -62,7 +62,7 @@ onMounted(() => {
   z-index: 90;
   transform: translate(-100%);
   transition: var(--trs-300);
-  height: 100vh;
+  // height: 100vh;
 
   .mobile-menu-content {
     padding: 110px 15px 100px;
