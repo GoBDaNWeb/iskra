@@ -65,11 +65,11 @@ onMounted(() => {
   height: 100vh;
 
   .mobile-menu-content {
-    padding: 110px 15px 100px;
+    padding: 110px 15px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // gap: 100px;
+    gap: 5%;
     height: 100%;
     opacity: 0;
     transition: var(--trs-300);

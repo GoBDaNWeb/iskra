@@ -172,7 +172,6 @@ import { Button } from "@/shared/ui";
           line-height: 33px;
         }
         .file {
-          margin-bottom: 40px;
           display: flex;
           align-items: center;
           gap: 14px;

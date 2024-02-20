@@ -192,7 +192,6 @@ const houseList = [
         .menu-mob {
           align-items: center;
           gap: 14px;
-          margin-bottom: 20px;
           display: flex;
           svg {
             stroke: var(--white-color);
