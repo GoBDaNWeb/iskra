@@ -62,6 +62,7 @@ onMounted(() => {
   z-index: 90;
   transform: translate(-100%);
   transition: var(--trs-300);
+  height: 100vh;
 
   .mobile-menu-content {
     padding: 110px 15px 100px;
@@ -73,7 +74,9 @@ onMounted(() => {
     opacity: 0;
     transition: var(--trs-300);
     transition-delay: 400ms;
-    overflow: auto;
+    @media (max-height: 600px) {
+      overflow: auto;
+    }
     nav {
       ul {
         display: flex;
