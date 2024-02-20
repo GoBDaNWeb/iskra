@@ -62,14 +62,14 @@ onMounted(() => {
   z-index: 90;
   transform: translate(-100%);
   transition: var(--trs-300);
-  // height: 100vh;
+  height: 100vh;
 
   .mobile-menu-content {
     padding: 110px 15px 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 100px;
+    // gap: 100px;
     height: 100%;
     opacity: 0;
     transition: var(--trs-300);
