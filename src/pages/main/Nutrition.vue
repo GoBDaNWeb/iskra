@@ -33,6 +33,14 @@ const houseList = [
               </div>
             </SwiperSlide>
           </MainSwiper>
+          <div class="menu-wrapper">
+            <span>Пример меню</span>
+            <div class="menu-mob">
+              <FileIcon />
+              <p>Полезное, 6-разовое питание из качественных ингредиентов</p>
+            </div>
+          </div>
+
           <div class="button-wrapper">
             <Button variable="primary">Посмотреть</Button>
           </div>
@@ -118,8 +126,7 @@ const houseList = [
         margin-bottom: 20px;
         display: block;
         @media (max-width: $tab) {
-          font-size: 28px;
-          line-height: 33px;
+          display: none;
         }
       }
       .menu {
@@ -127,6 +134,9 @@ const houseList = [
         align-items: center;
         gap: 14px;
         margin-bottom: 20px;
+        @media (max-width: $tab) {
+          display: none;
+        }
         svg {
           stroke: var(--white-color);
         }
@@ -165,13 +175,44 @@ const houseList = [
           object-fit: cover;
         }
       }
+      .menu-wrapper {
+        display: none;
+
+        @media (max-width: $tab) {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          margin-top: 104px;
+        }
+        span {
+          font-size: 28px;
+          line-height: 33px;
+          color: var(--white-color);
+        }
+        .menu-mob {
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 20px;
+          display: flex;
+          svg {
+            stroke: var(--white-color);
+          }
+          p {
+            color: var(--white-color);
+            font-size: 18px;
+            line-height: 25px;
+            max-width: 263px;
+          }
+        }
+      }
+
       .button-wrapper {
         display: none;
         @media (max-width: $tab) {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-top: 65px;
+          margin-top: 40px;
           button {
             width: 360px;
           }

@@ -19,6 +19,7 @@ import img from "@/shared/assets/images/rest/1.jpg";
                 Благодаря большому разнообразию развлечений один день ребенка в
                 лагере никогда не похож на другой.
               </p>
+              <Photo :img="img" />
               <span>Распорядок дня</span>
               <div class="file">
                 <FileIcon />
@@ -91,6 +92,13 @@ import img from "@/shared/assets/images/rest/1.jpg";
             font-size: 40px;
             line-height: 44px;
             margin-bottom: 40px;
+          }
+        }
+        .photo {
+          display: none;
+          @media (max-width: $tab) {
+            display: block;
+            margin-bottom: 64px;
           }
         }
         & > p {

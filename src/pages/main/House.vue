@@ -34,7 +34,7 @@ const houseList = [
             </SwiperSlide>
           </MainSwiper>
           <div class="button-wrapper">
-            <Button variable="primary">Посмотреть</Button>
+            <Button variable="primary">Правила бронирования</Button>
           </div>
         </div>
       </div>

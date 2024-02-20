@@ -64,7 +64,7 @@ onMounted(() => {
   transition: var(--trs-300);
 
   .mobile-menu-content {
-    padding: 110px 15px 106px;
+    padding: 110px 15px 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

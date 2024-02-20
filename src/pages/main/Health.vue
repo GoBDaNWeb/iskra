@@ -24,6 +24,17 @@ import { Button } from "@/shared/ui";
           <div class="image-wrapper">
             <img src="@/shared/assets/images/health/1.jpg" alt="photo" />
           </div>
+          <div class="file-wrapper">
+            <span
+              >Медицинский <br />
+              работник 24 часа</span
+            >
+            <p>Лицензия на меддеятелность</p>
+            <div class="file">
+              <FileIcon />
+              <p>Возможно какое-то описание или пояснение</p>
+            </div>
+          </div>
           <div class="button-wrapper">
             <Button variable="primary">Посмотреть</Button>
           </div>
@@ -45,6 +56,7 @@ import { Button } from "@/shared/ui";
   @media (max-width: $tab) {
     padding-top: 80px;
     padding-bottom: 62px;
+    background: #ffd9d0;
   }
   &:after {
     content: "";
@@ -96,8 +108,7 @@ import { Button } from "@/shared/ui";
         display: block;
         margin-bottom: 50px;
         @media (max-width: $tab) {
-          font-size: 28px;
-          line-height: 33px;
+          display: none;
         }
       }
       & > p {
@@ -106,8 +117,7 @@ import { Button } from "@/shared/ui";
         line-height: 38px;
         margin-bottom: 20px;
         @media (max-width: $tab) {
-          font-size: 28px;
-          line-height: 33px;
+          display: none;
         }
       }
       .file {
@@ -115,6 +125,9 @@ import { Button } from "@/shared/ui";
         display: flex;
         align-items: center;
         gap: 14px;
+        @media (max-width: $tab) {
+          display: none;
+        }
         svg {
           stroke: var(--black-color);
         }
@@ -140,6 +153,40 @@ import { Button } from "@/shared/ui";
       width: 58%;
       @media (max-width: $tab) {
         width: 100%;
+      }
+      .file-wrapper {
+        display: none;
+        @media (max-width: $tab) {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          margin-top: 85px;
+        }
+        & > span {
+          font-size: 28px;
+          line-height: 33px;
+          font-weight: 700;
+        }
+        & > p {
+          font-size: 28px;
+          line-height: 33px;
+        }
+        .file {
+          margin-bottom: 40px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          svg {
+            stroke: var(--black-color);
+          }
+          p {
+            @media (max-width: $tab) {
+              font-size: 18px;
+              line-height: 25px;
+              max-width: 263px;
+            }
+          }
+        }
       }
       .image-wrapper {
         width: 100%;

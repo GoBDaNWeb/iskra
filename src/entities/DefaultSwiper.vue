@@ -170,6 +170,11 @@ const props = defineProps(["title", "badges", "text"]);
       padding: 0 30px;
       display: flex;
       align-items: center;
+      @media (max-width: $tab) {
+        font-size: 16px;
+
+        line-height: 24px;
+      }
     }
   }
 }
